@@ -11,16 +11,15 @@ export default function GalleryPage() {
   const [lightboxPhoto, setLightboxPhoto] = useState<Photo | null>(null);
 
   const categories = [
-    { label: 'All Artifacts', id: 'all' },
+    { label: 'All Work', id: 'all' },
     { label: 'Weddings', id: 'wedding' },
-    { label: 'Pre-Wedding', id: 'pre-wedding' },
-    { label: 'Bridal Portraits', id: 'bride' },
-    { label: 'Engagement', id: 'engagement' },
-    { label: 'Receptions', id: 'reception' },
+    { label: 'Pre-Weddings', id: 'pre-wedding' },
+    { label: 'Bride Photography', id: 'bride' },
     { label: 'House Warming', id: 'house-warming' },
     { label: 'Baby Shower', id: 'baby-shower' },
-    { label: 'Birthdays', id: 'birthday' },
-    { label: 'Corporate Events', id: 'corporate' },
+    { label: 'Candid Videography', id: 'candid-videography' },
+    { label: 'Birthday Events', id: 'birthday' },
+    { label: 'Album Designing', id: 'album-designing' },
   ];
 
   // Sync category state with URL hash query params (e.g., #/gallery?category=wedding)

@@ -158,13 +158,27 @@ export default function Services() {
   return (
     <section 
       id="services-section" 
-      className="relative py-28 text-neutral-900 overflow-hidden bg-white"
+      className="relative py-28 text-neutral-900 overflow-hidden bg-neutral-50/40"
     >
+      {/* Background Video with subtle overlay */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-[0.25] scale-105"
+        >
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-wedding-couple-embracing-under-veil-40509-large.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/90 via-neutral-50/50 to-neutral-50/95"></div>
+      </div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <span className="inline-block text-[8px] font-bold uppercase tracking-[0.3em] text-brand-purple mb-3 font-mono">
+          <span className="inline-block text-[15px] font-bold uppercase tracking-[0.3em] text-brand-purple mb-3 font-mono">
             OUR SERVICES
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-light text-neutral-900 mb-5 tracking-tight leading-tight">
@@ -230,8 +244,8 @@ export default function Services() {
               <span className="inline-flex items-center gap-1.5 bg-brand-purple/10 border border-brand-purple/20 text-brand-purple px-3 py-1 rounded-sm text-[10px] uppercase font-mono tracking-wider font-bold">
                 <CalendarCheck className="w-3.5 h-3.5" /> Booking slots open
               </span>
-              <h3 className="font-serif text-2xl md:text-3xl font-light tracking-tight text-neutral-900">
-                Secure Your Date on Our Exclusive Guild Calendar
+              <h3 className="font-serif text-2xl md:text-3xl font-light tracking-tight text-neutral-900 leading-snug">
+                Av Dream Creations specializs in creating beautiful and powerful images with an Artisic touch...!
               </h3>
             </div>
             <a

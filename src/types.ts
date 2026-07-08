@@ -1,7 +1,7 @@
 export interface Photo {
   id: string;
   url: string;
-  category: 'wedding' | 'pre-wedding' | 'engagement' | 'bride' | 'reception' | 'birthday' | 'baby-shower' | 'house-warming' | 'corporate';
+  category: 'wedding' | 'pre-wedding' | 'bride' | 'house-warming' | 'baby-shower' | 'candid-videography' | 'birthday' | 'album-designing';
   title: string;
   alt: string;
   description: string;

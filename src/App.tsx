@@ -7,8 +7,7 @@ import MobileCTABar from './components/MobileCTABar';
 // Pages
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
-import WeddingPage from './pages/WeddingPage';
-import PreWeddingPage from './pages/PreWeddingPage';
+import FilmsPage from './pages/FilmsPage';
 import GalleryPage from './pages/GalleryPage';
 import PricingPage from './pages/PricingPage';
 import ContactPage from './pages/ContactPage';
@@ -25,10 +24,8 @@ export default function App() {
         setCurrentRoute('home');
       } else if (path === '#/about') {
         setCurrentRoute('about');
-      } else if (path === '#/wedding') {
-        setCurrentRoute('wedding');
-      } else if (path === '#/pre-wedding') {
-        setCurrentRoute('pre-wedding');
+      } else if (path === '#/films') {
+        setCurrentRoute('films');
       } else if (path === '#/gallery') {
         setCurrentRoute('gallery');
       } else if (path === '#/pricing') {
@@ -64,10 +61,8 @@ export default function App() {
         return <Home onNavigate={changeRoute} />;
       case 'about':
         return <AboutPage />;
-      case 'wedding':
-        return <WeddingPage />;
-      case 'pre-wedding':
-        return <PreWeddingPage />;
+      case 'films':
+        return <FilmsPage />;
       case 'gallery':
         return <GalleryPage />;
       case 'pricing':

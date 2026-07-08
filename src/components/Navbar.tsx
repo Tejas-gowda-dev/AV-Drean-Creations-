@@ -26,13 +26,12 @@ export default function Navbar({ currentRoute, onChangeRoute }: NavbarProps) {
   const navItems = [
     { label: 'Home', route: 'home' },
     { label: 'About', route: 'about' },
-    { label: 'Wedding Shoot', route: 'wedding' },
-    { label: 'Pre-Wedding', route: 'pre-wedding' },
+    { label: 'Wedding Films', route: 'films' },
     { label: 'Full Gallery', route: 'gallery' },
     // { label: 'Investment & Packages', route: 'pricing' },
     { label: 'Reviews', route: 'reviews' },
     { label: 'FAQ', route: 'faq' },
-    { label: 'Contact', route: 'contact' },
+    // { label: 'Contact', route: 'contact' },
   ];
 
   const handleNavClick = (route: string) => {
@@ -104,7 +103,7 @@ export default function Navbar({ currentRoute, onChangeRoute }: NavbarProps) {
             onClick={() => handleNavClick('contact')}
             className="hidden sm:flex items-center gap-2 h-11 px-5 text-[11px] font-mono uppercase tracking-widest transition-all cursor-pointer font-semibold bg-brand-gradient hover:bg-brand-gradient-hover text-white rounded-sm"
           >
-            Get Free Quote <ArrowRight className="w-3.5 h-3.5" />
+            Contact <ArrowRight className="w-3.5 h-3.5" />
           </button>
 
           <button
@@ -146,7 +145,7 @@ export default function Navbar({ currentRoute, onChangeRoute }: NavbarProps) {
               onClick={() => handleNavClick('contact')}
               className="w-full bg-brand-gradient text-white text-xs font-mono uppercase tracking-widest font-semibold py-4 rounded-xl flex items-center justify-center gap-2 cursor-pointer h-12"
             >
-              Get Free Quote
+              Contact
             </button>
             <a
               href="tel:+919743644065"

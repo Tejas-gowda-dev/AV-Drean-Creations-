@@ -47,7 +47,7 @@ export const SERVICES: Service[] = [
     description: 'Ultra-HD cinematic wedding films, emotional highlights, same-day edits, and professional drone coverage.',
     image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800&auto=format&fit=crop',
     iconName: 'Video',
-    link: '#/gallery?category=wedding'
+    link: '#/gallery?category=candid-videography'
   },
   {
     id: 'birthday-events',
@@ -63,7 +63,7 @@ export const SERVICES: Service[] = [
     description: 'Artfully curated, premium hard-bound flush-mount coffee table albums designed to last for generations.',
     image: 'https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?q=80&w=800&auto=format&fit=crop',
     iconName: 'BookOpen',
-    link: '#/gallery?category=all'
+    link: '#/gallery?category=album-designing'
   }
 ];
 
@@ -101,8 +101,8 @@ export const PORTFOLIO: Photo[] = [
   {
     id: 'e1',
     url: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1000&auto=format&fit=crop',
-    category: 'engagement',
-    title: 'The Promise Rings',
+    category: 'candid-videography',
+    title: 'Cinematic Promise Ring Exchange',
     alt: 'engagement-ring-exchange-ceremony-bangalore.jpg',
     description: 'A beautifully isolated macro shot of the moment rings are exchanged amidst rose petal showers.',
     location: 'The Leela Palace, Bangalore',
@@ -111,8 +111,8 @@ export const PORTFOLIO: Photo[] = [
   {
     id: 'r1',
     url: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1000&auto=format&fit=crop',
-    category: 'reception',
-    title: 'Grand Entrance',
+    category: 'candid-videography',
+    title: 'Cinematic Grand Reception Entrance',
     alt: 'wedding-reception-couple-entry-smoke-effect-bangalore.jpg',
     description: 'The newlyweds entering their reception stage amidst cold fire sparkles and cold fog.',
     location: 'White Petals, Bangalore',
@@ -151,11 +151,11 @@ export const PORTFOLIO: Photo[] = [
   {
     id: 'c1',
     url: 'https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?q=80&w=1000&auto=format&fit=crop',
-    category: 'corporate',
-    title: 'Corporate Excellence Awards',
+    category: 'album-designing',
+    title: 'Custom Lay-flat Coffee Table Album',
     alt: 'corporate-events-candid-business-photography-bangalore.jpg',
-    description: 'Dynamic keynotes and professional candid networking captures under dramatic conference room lighting.',
-    location: 'Manyata Tech Park, Bangalore',
+    description: 'Artfully designed album layouts printing rich memories onto thick, non-tearable high-gloss sheets.',
+    location: 'Studio Production, Bangalore',
     date: 'June 2026'
   },
   {

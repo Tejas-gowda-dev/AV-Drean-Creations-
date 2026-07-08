@@ -78,28 +78,18 @@ export default function Footer({ onNavigate }: FooterProps) {
             </h4>
             <ul className="space-y-2.5 text-xs font-sans">
               <li>
-                <button onClick={() => handleNavClick('wedding')} className="hover:text-gold transition-colors cursor-pointer text-left">
-                  Wedding Shoots & Films
-                </button>
-              </li>
-              <li>
-                <button onClick={() => handleNavClick('pre-wedding')} className="hover:text-gold transition-colors cursor-pointer text-left">
-                  Pre-Wedding Sessions
+                <button onClick={() => handleNavClick('films')} className="hover:text-gold transition-colors cursor-pointer text-left">
+                  Cinematic Wedding Films
                 </button>
               </li>
               <li>
                 <button onClick={() => handleNavClick('gallery')} className="hover:text-gold transition-colors cursor-pointer text-left">
-                  Bridal Portraiture
+                  Full Story Gallery
                 </button>
               </li>
               <li>
                 <button onClick={() => handleNavClick('home', 'services-section')} className="hover:text-gold transition-colors cursor-pointer text-left">
-                  Baby Shower (Seemantha)
-                </button>
-              </li>
-              <li>
-                <button onClick={() => handleNavClick('home', 'services-section')} className="hover:text-gold transition-colors cursor-pointer text-left">
-                  House Warming (Griha Pravesha)
+                  OUR SERVICES
                 </button>
               </li>
             </ul>

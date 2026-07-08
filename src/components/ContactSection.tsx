@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { MapPin, Phone, Mail, Clock, ShieldCheck, Heart, Sparkles } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Heart, Sparkles } from 'lucide-react';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -156,20 +156,12 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Trust Signals */}
-            <div className="flex items-center gap-3 bg-neutral-50 border border-neutral-200 p-4 rounded-sm">
-              <ShieldCheck className="w-8 h-8 text-gold flex-shrink-0" />
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-gold font-mono">100% Secure & Confidential</p>
-                <p className="text-xs text-neutral-500">Your details are never shared with third-party coordinators.</p>
-              </div>
-            </div>
           </div>
 
           {/* Column 2: Form */}
           <div className="lg:col-span-7 bg-white border border-neutral-200 rounded-sm p-6 md:p-10 shadow-xl relative text-neutral-900">
             <div className="absolute top-0 right-10 -translate-y-1/2 bg-gold/10 border border-gold/20 px-4 py-1 rounded-sm text-xs font-mono text-gold flex items-center gap-1.5 backdrop-blur-md font-bold uppercase tracking-widest">
-              <Sparkles className="w-3 h-3 text-gold" /> Average reply: 18 mins
+              <Sparkles className="w-3 h-3 text-gold" /> Hey There!
             </div>
 
             <AnimatePresence mode="wait">

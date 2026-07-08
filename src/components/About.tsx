@@ -26,8 +26,64 @@ export default function About() {
   ];
 
   return (
-    <section id="about-section" className="py-24 bg-white text-neutral-900 border-b border-neutral-100">
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
+    <section id="about-section" className="relative overflow-hidden py-24 bg-white text-neutral-900 border-b border-neutral-100">
+      {/* Subtle brand logo watermark background */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 w-[350px] h-[350px] md:w-[600px] md:h-[600px] pointer-events-none opacity-[0.03] md:opacity-[0.05] select-none z-0">
+        <svg viewBox="0 0 100 85" className="w-full h-full">
+          <defs>
+            <linearGradient id="about-logo-camera-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#8265AF" />
+              <stop offset="100%" stopColor="#D17B92" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M 22 25
+               C 22 22, 24 20, 27 20
+               L 35 20
+               C 37 15, 40 13, 44 13
+               L 56 13
+               C 60 13, 63 15, 65 20
+               L 73 20
+               C 76 20, 78 22, 78 25
+               L 78 68
+               C 78 72, 76 74, 73 74
+               L 27 74
+               C 24 74, 22 72, 22 68
+               Z"
+            fill="none"
+            stroke="url(#about-logo-camera-gradient)"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <circle
+            cx="50"
+            cy="47"
+            r="17"
+            fill="none"
+            stroke="url(#about-logo-camera-gradient)"
+            strokeWidth="3.5"
+          />
+          <circle
+            cx="50"
+            cy="47"
+            r="11"
+            fill="url(#about-logo-camera-gradient)"
+          />
+          <text
+            x="50"
+            y="51.5"
+            textAnchor="middle"
+            fill="white"
+            fontSize="14"
+            fontFamily='"Alex Brush", "Great Vibes", cursive'
+          >
+            A
+          </text>
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Brand Story Column */}
@@ -40,24 +96,12 @@ export default function About() {
             </h2>
             <div className="space-y-4 font-sans text-neutral-600 text-sm leading-relaxed">
               <p>
-                Your wedding isn’t a series of commercial photo shoots or checklists. It is a sacred, heavy, beautiful swirl of emotions — the soft catch in your partner’s throat as you walk toward the mandap, the silent tear from your mother during the kanyadaana, and the explosive joy of your family sangeet.
+              At AV Dream Creations, we believe that a weddingphotography is more than a moment in time it’s a lasting memory that can be cherished for years to come. We specialize in capturing beautiful and creative moments, whether it’s a wedding, a family portrait, or a special event. Our team of professional photographers work with you to bring your vision to life. We use a variety of techniques and equipment to ensure you get the highest quality photos that you’ll be proud to look back on. Visit our website to learn more and book your session today!
               </p>
-              <p>
-                At <strong className="text-neutral-950 font-semibold">AV Dream Creations</strong>, we don’t believe in traditional manufactured setups. We believe in your unique story. Based in Bangalore, Karnataka, we travel across Mysore, Mandya, and Tumkur to capture weddings exactly as they felt: grand, emotional, raw, and absolutely unforgettable.
-              </p>
+              
               <p className="italic font-serif text-neutral-500 border-l-2 border-gold pl-4">
                 "Our mission is simple: to make sure that fifty years from today, you can look at your wedding album and feel your heart race exactly the same way it did on your wedding morning."
               </p>
-            </div>
-            
-            <div className="pt-2">
-              <a
-                id="about-cta-brief"
-                href="#contact"
-                className="inline-flex items-center gap-2 h-12 px-6 rounded-sm bg-brand-gradient text-white font-mono text-xs uppercase tracking-widest font-bold hover:bg-brand-gradient-hover transition-all duration-300 cursor-pointer"
-              >
-                Tell Us Your Love Story <Sparkles className="w-4 h-4" />
-              </a>
             </div>
           </div>
 

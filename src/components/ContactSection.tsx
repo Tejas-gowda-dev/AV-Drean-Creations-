@@ -1,0 +1,391 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { MapPin, Phone, Mail, Clock, ShieldCheck, Heart, Sparkles } from 'lucide-react';
+
+export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    eventDate: '',
+    eventType: 'wedding',
+    guestCount: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [inquiries, setInquiries] = useState<any[]>(() => {
+    const saved = localStorage.getItem('av_dream_inquiries');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.phone || !formData.eventDate) {
+      alert('Please fill out all mandatory fields (Name, Phone, and Event Date).');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Simulate 30-minute promise simulation and save to local logs
+    setTimeout(() => {
+      const newInquiry = {
+        ...formData,
+        id: 'inq-' + Date.now(),
+        timestamp: new Date().toLocaleString()
+      };
+      const updated = [newInquiry, ...inquiries];
+      setInquiries(updated);
+      localStorage.setItem('av_dream_inquiries', JSON.stringify(updated));
+
+      setIsSubmitting(false);
+      setSubmitSuccess(true);
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        eventDate: '',
+        eventType: 'wedding',
+        guestCount: '',
+        message: ''
+      });
+    }, 1200);
+  };
+
+  const serviceAreas = ['Bangalore', 'Mysore', 'Mandya', 'Tumkur', 'Srirangapatna', 'Channapatna', 'Ramanagara', 'India'];
+
+  return (
+    <section id="contact-section" className="py-24 bg-white text-neutral-900 relative overflow-hidden border-t border-neutral-100">
+      {/* Subtle Background Image watermark */}
+      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
+        <img
+          src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=1920&auto=format&fit=crop"
+          alt="Wedding photography background pattern"
+          referrerPolicy="no-referrer"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Background overlay circles */}
+      <div className="absolute top-1/4 right-0 w-96 h-96 bg-brand-purple/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-1/4 left-0 w-96 h-96 bg-brand-purple/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* Column 1: Info */}
+          <div className="lg:col-span-5 space-y-8">
+            <div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.2em] text-gold mb-3 font-sans">
+                <Heart className="w-3.5 h-3.5 fill-gold text-gold" /> Let’s Create Magic
+              </span>
+              <h2 className="font-serif text-3xl md:text-5xl font-light tracking-tight mb-4 leading-tight">
+                Get Your Wedding Quote in <span className="italic text-gold">30 Minutes</span>
+              </h2>
+              <p className="font-sans text-neutral-600 text-sm leading-relaxed">
+                Limited bookings for the 2026/2027 wedding season. We deliberately capture a limited number of weddings each season to guarantee uncompromised focus, premium storytelling, and same-day master deliveries.
+              </p>
+            </div>
+
+            {/* Direct Connect Info */}
+            <div className="space-y-6">
+              <a href="tel:+919743644065" className="flex items-start gap-4 p-4 rounded-sm bg-neutral-50/70 border border-neutral-200/60 hover:border-gold/40 transition-all group">
+                <div className="bg-gold/10 text-gold p-3 rounded-sm group-hover:bg-gold group-hover:text-white transition-all">
+                   <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 font-bold font-sans">Call Our Experience Desk</h4>
+                  <p className="text-base font-semibold font-mono mt-1 text-neutral-800 group-hover:text-gold transition-colors">+91 97436 44065</p>
+                  <p className="text-xs text-neutral-500 mt-0.5">Prompt 8:00 AM - 10:00 PM helpline</p>
+                </div>
+              </a>
+
+              <a href="mailto:avdream518@gmail.com" className="flex items-start gap-4 p-4 rounded-sm bg-neutral-50/70 border border-neutral-200/60 hover:border-gold/40 transition-all group">
+                <div className="bg-gold/10 text-gold p-3 rounded-sm group-hover:bg-gold group-hover:text-white transition-all">
+                   <Mail className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 font-bold font-sans">Send Project Brief</h4>
+                  <p className="text-base font-semibold font-mono mt-1 text-neutral-800 group-hover:text-gold transition-colors">avdream518@gmail.com</p>
+                  <p className="text-xs text-neutral-500 mt-0.5">Expect response within 1 hour</p>
+                </div>
+              </a>
+
+              <div className="flex items-start gap-4 p-4 rounded-sm bg-neutral-50/70 border border-neutral-200/60 hover:border-gold/40 transition-all group">
+                <div className="bg-gold/10 text-gold p-3 rounded-sm group-hover:bg-gold group-hover:text-white transition-all">
+                   <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 font-bold font-sans">Studio Address</h4>
+                  <p className="text-sm font-semibold mt-1 text-neutral-800 group-hover:text-gold transition-colors">avdreamcreations</p>
+                  <p className="text-xs text-neutral-600 mt-0.5">98/2, 12th Main Rd, JC Nagar, Kurubarahalli, Kamala Nagar, Bengaluru, Karnataka 560086</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 p-4 rounded-sm bg-neutral-50/70 border border-neutral-200/60">
+                <div className="bg-gold/10 text-gold p-3 rounded-sm">
+                  <Clock className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 font-bold font-sans">Business Hours</h4>
+                  <p className="text-sm font-semibold mt-1 text-neutral-800">Monday - Sunday: 8:00 AM - 10:00 PM</p>
+                  <p className="text-xs text-neutral-500 mt-0.5">Available for physical consultations in Bangalore</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Service Areas */}
+            <div className="space-y-3">
+              <h4 className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 font-bold font-sans">
+                Serving All Karnataka:
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {serviceAreas.map((area, i) => (
+                  <span
+                    key={i}
+                    className="text-xs bg-neutral-50 border border-neutral-200 text-neutral-600 px-3 py-1.5 rounded-sm font-sans hover:border-gold/40 transition-all"
+                  >
+                    {area}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Trust Signals */}
+            <div className="flex items-center gap-3 bg-neutral-50 border border-neutral-200 p-4 rounded-sm">
+              <ShieldCheck className="w-8 h-8 text-gold flex-shrink-0" />
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-gold font-mono">100% Secure & Confidential</p>
+                <p className="text-xs text-neutral-500">Your details are never shared with third-party coordinators.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Column 2: Form */}
+          <div className="lg:col-span-7 bg-white border border-neutral-200 rounded-sm p-6 md:p-10 shadow-xl relative text-neutral-900">
+            <div className="absolute top-0 right-10 -translate-y-1/2 bg-gold/10 border border-gold/20 px-4 py-1 rounded-sm text-xs font-mono text-gold flex items-center gap-1.5 backdrop-blur-md font-bold uppercase tracking-widest">
+              <Sparkles className="w-3 h-3 text-gold" /> Average reply: 18 mins
+            </div>
+
+            <AnimatePresence mode="wait">
+              {!submitSuccess ? (
+                <form id="wedding-inquiry-form" onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500 font-sans mb-2">
+                        Your Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        required
+                        placeholder="e.g., Tejas Gowda"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full h-12 px-4 rounded-sm bg-neutral-50 border border-neutral-200 focus:border-gold focus:ring-1 focus:ring-gold font-sans text-neutral-800 text-sm outline-none transition-all"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500 font-sans mb-2">
+                        Mobile Number *
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        id="phone"
+                        required
+                        placeholder="e.g., +91 98765 43210"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full h-12 px-4 rounded-sm bg-neutral-50 border border-neutral-200 focus:border-gold focus:ring-1 focus:ring-gold font-sans text-neutral-800 text-sm outline-none transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="email" className="block text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500 font-sans mb-2">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="e.g., tejas@example.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full h-12 px-4 rounded-sm bg-neutral-50 border border-neutral-200 focus:border-gold focus:ring-1 focus:ring-gold font-sans text-neutral-800 text-sm outline-none transition-all"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="eventDate" className="block text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500 font-sans mb-2">
+                        Event Date *
+                      </label>
+                      <input
+                        type="date"
+                        name="eventDate"
+                        id="eventDate"
+                        required
+                        value={formData.eventDate}
+                        onChange={handleChange}
+                        className="w-full h-12 px-4 rounded-sm bg-neutral-50 border border-neutral-200 focus:border-gold focus:ring-1 focus:ring-gold font-sans text-neutral-800 text-sm outline-none transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="eventType" className="block text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500 font-sans mb-2">
+                        Celebration Type
+                      </label>
+                      <select
+                        name="eventType"
+                        id="eventType"
+                        value={formData.eventType}
+                        onChange={handleChange}
+                        className="w-full h-12 px-4 rounded-sm bg-neutral-50 border border-neutral-200 focus:border-gold focus:ring-1 focus:ring-gold font-sans text-neutral-800 text-sm outline-none transition-all cursor-pointer"
+                      >
+                        <option value="wedding">Wedding Shoot & Film</option>
+                        <option value="pre-wedding">Creative Pre-Wedding Shoot</option>
+                        <option value="engagement">Engagement Ceremony</option>
+                        <option value="house-warming">House Warming Ceremony</option>
+                        <option value="baby-shower">Seemantha / Baby Shower</option>
+                        <option value="birthday">Milestone Birthday Event</option>
+                        <option value="corporate">Corporate Event Coverage</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="guestCount" className="block text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500 font-sans mb-2">
+                        Estimated Guest Count
+                      </label>
+                      <input
+                        type="number"
+                        name="guestCount"
+                        id="guestCount"
+                        placeholder="e.g., 300 guests"
+                        value={formData.guestCount}
+                        onChange={handleChange}
+                        className="w-full h-12 px-4 rounded-sm bg-neutral-50 border border-neutral-200 focus:border-gold focus:ring-1 focus:ring-gold font-sans text-neutral-800 text-sm outline-none transition-all"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-500 font-sans mb-2">
+                      Tell Us Your Dream Vision
+                    </label>
+                    <textarea
+                      name="message"
+                      id="message"
+                      rows={3}
+                      placeholder="Share details about your wedding venue, family style, preferred traditional elements, or specific ideas..."
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full p-4 rounded-sm bg-neutral-50 border border-neutral-200 focus:border-gold focus:ring-1 focus:ring-gold font-sans text-neutral-800 text-sm outline-none resize-none transition-all"
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    id="submit-inquiry-btn"
+                    disabled={isSubmitting}
+                    className="w-full bg-brand-gradient hover:bg-brand-gradient-hover text-white font-bold rounded-sm text-[11px] uppercase tracking-widest h-12 md:h-14 flex items-center justify-center transition-all duration-300 disabled:opacity-50 cursor-pointer"
+                  >
+                    {isSubmitting ? 'Securing Your Session...' : 'Submit Interest / Get Quote'}
+                  </button>
+
+                  <p className="text-center text-xs text-neutral-500 font-sans">
+                    By submitting, you agree to receive immediate pricing callback & customized PDF quotes on WhatsApp.
+                  </p>
+                </form>
+              ) : (
+                <motion.div
+                  key="success-card"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center py-12 space-y-6"
+                >
+                  <div className="w-16 h-16 bg-brand-gradient text-white rounded-sm flex items-center justify-center mx-auto shadow-lg">
+                    <Heart className="w-8 h-8 fill-white text-white" />
+                  </div>
+                  <div className="space-y-2">
+                    <h3 className="font-serif text-2xl md:text-3xl font-light">Your Story is Secured!</h3>
+                    <p className="font-sans text-neutral-600 text-sm max-w-md mx-auto">
+                      Thank you! Our wedding experience coordinator will call you back within 30 minutes to discuss your dream timeline and customize your quote.
+                    </p>
+                  </div>
+                  <div className="border-t border-neutral-200 pt-6 max-w-sm mx-auto">
+                    <p className="text-xs text-neutral-500 uppercase tracking-widest font-mono">Expected response by</p>
+                    <p className="text-lg font-mono text-gold font-semibold mt-1">
+                      {new Date(Date.now() + 18 * 60 * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setSubmitSuccess(false)}
+                    className="text-gold text-xs font-mono tracking-wider hover:underline"
+                  >
+                    ← Submit another event inquiry
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* Embedded Google Map */}
+        <div id="google-map-container" className="mt-16 rounded-sm overflow-hidden shadow-xl border border-neutral-200 h-[350px] md:h-[450px]">
+          <iframe
+            src="https://maps.google.com/maps?q=avdreamcreations,%2098/2,%2012th%20Main%20Rd,%20JC%20Nagar,%20Kurubarahalli,%20Kamala%20Nagar,%20Bengaluru,%20Karnataka%20560086&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen={true}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="AV Dream Creations Bangalore Studio Location"
+          ></iframe>
+        </div>
+
+        {/* Local Inquiries Panel (For user testing of the working form!) */}
+        {inquiries.length > 0 && (
+          <div className="mt-16 p-6 rounded-sm bg-neutral-50 border border-neutral-200 max-w-4xl mx-auto">
+            <h3 className="font-mono text-xs text-gold uppercase tracking-widest mb-4 flex items-center gap-2">
+              <Sparkles className="w-3.5 h-3.5" /> Logged Inquiries (Simulation Active)
+            </h3>
+            <div className="space-y-4 max-h-[250px] overflow-y-auto pr-2">
+              {inquiries.map((inq: any) => (
+                <div key={inq.id} className="text-xs bg-white p-4 rounded-sm border border-neutral-200 flex flex-wrap justify-between items-center gap-3">
+                  <div>
+                    <p className="font-semibold text-neutral-800">{inq.name} - <span className="text-gold capitalize">{inq.eventType}</span></p>
+                    <p className="text-neutral-500 mt-1">Phone: {inq.phone} | Date: {inq.eventDate}</p>
+                  </div>
+                  <span className="font-mono text-[10px] text-gold bg-gold/10 px-2 py-1 rounded-sm">
+                    {inq.timestamp}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={() => {
+                localStorage.removeItem('av_dream_inquiries');
+                setInquiries([]);
+              }}
+              className="mt-4 text-[10px] font-mono text-red-400 hover:underline cursor-pointer"
+            >
+              Clear submission logs
+            </button>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}

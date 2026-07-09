@@ -24,13 +24,13 @@ export default function Navbar({ currentRoute, onChangeRoute }: NavbarProps) {
   }, []);
 
   const navItems = [
-    { label: 'Home', route: 'home' },
+    // { label: 'Home', route: 'home' },
     { label: 'About', route: 'about' },
-    { label: 'Wedding Films', route: 'films' },
-    { label: 'Full Gallery', route: 'gallery' },
+    { label: 'Films', route: 'films' },
+    { label: 'Gallery', route: 'gallery' },
     // { label: 'Investment & Packages', route: 'pricing' },
-    { label: 'Reviews', route: 'reviews' },
-    { label: 'FAQ', route: 'faq' },
+    // { label: 'Reviews', route: 'reviews' },
+    { label: 'Question?', route: 'faq' },
     // { label: 'Contact', route: 'contact' },
   ];
 

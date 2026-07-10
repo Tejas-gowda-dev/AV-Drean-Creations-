@@ -1,6 +1,7 @@
 import Hero from '../components/Hero';
 import TrustBadges from '../components/TrustBadges';
 import FeaturedFilm from '../components/FeaturedFilm';
+import CraftVsCommodity from '../components/CraftVsCommodity';
 import Services from '../components/Services';
 import PortfolioPreview from '../components/PortfolioPreview';
 import WeddingPhotographyPromo from '../components/WeddingPhotographyPromo';
@@ -55,6 +56,9 @@ export default function Home({ onNavigate }: HomeProps) {
 
       {/* 2. Featured Wedding Film */}
       <FeaturedFilm />
+
+      {/* 2.5. Craft Vs Commodity Philosophy Section */}
+      <CraftVsCommodity />
 
       {/* 3. Trust Badges Bar */}
       <TrustBadges />

@@ -1,15 +1,14 @@
 import Hero from '../components/Hero';
 import TrustBadges from '../components/TrustBadges';
 import FeaturedFilm from '../components/FeaturedFilm';
-import About from '../components/About';
 import Services from '../components/Services';
 import PortfolioPreview from '../components/PortfolioPreview';
+import WeddingPhotographyPromo from '../components/WeddingPhotographyPromo';
 import Pricing from '../components/Pricing';
-import MeetTheTeam from '../components/MeetTheTeam';
+import ConnectPortfolio from '../components/ConnectPortfolio';
 import Testimonials from '../components/Testimonials';
 import InstagramFeed from '../components/InstagramFeed';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
-import FAQ from '../components/FAQ';
 import SEOHelper from '../components/SEOHelper';
 
 interface HomeProps {
@@ -60,33 +59,31 @@ export default function Home({ onNavigate }: HomeProps) {
       {/* 3. Trust Badges Bar */}
       <TrustBadges />
 
-      {/* 4. About / Why Choose Us */}
-      <About />
-
       {/* 5. Services Section */}
       <Services />
 
       {/* 6. Portfolio / Gallery Preview */}
       <PortfolioPreview />
 
+      {/* 7. Wedding Photography Promo section */}
+      <WeddingPhotographyPromo />
+
       {/* 7. Wedding Packages / Pricing
       <Pricing />
       */}
 
-      {/* 8. Meet the Team */}
-      <MeetTheTeam />
+      {/* 8. Connect & Experience Section */}
+      <ConnectPortfolio />
 
-      {/* 9. Client Testimonials */}
+      {/* 9. Client Testimonials
       <Testimonials />
+      */}
 
       {/* 10. Instagram Feed Section */}
       <InstagramFeed />
 
       {/* 11. Before/After Slider */}
       <BeforeAfterSlider />
-
-      {/* 12. FAQ Section */}
-      <FAQ />
     </div>
   );
 }

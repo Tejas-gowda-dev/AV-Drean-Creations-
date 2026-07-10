@@ -26,7 +26,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about-section" className="relative overflow-hidden py-24 bg-white text-neutral-900 border-b border-neutral-100">
+    <section id="about-section" style={{ backgroundColor: 'rgba(251, 246, 239, 1)' }} className="relative overflow-hidden py-24 text-neutral-900 border-b border-neutral-100">
       {/* Subtle brand logo watermark background */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 w-[350px] h-[350px] md:w-[600px] md:h-[600px] pointer-events-none opacity-[0.03] md:opacity-[0.05] select-none z-0">
         <svg viewBox="0 0 100 85" className="w-full h-full">

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppFloating from './components/WhatsAppFloating';
-import MobileCTABar from './components/MobileCTABar';
 
 // Pages
 import Home from './pages/Home';
@@ -11,6 +10,7 @@ import FilmsPage from './pages/FilmsPage';
 import GalleryPage from './pages/GalleryPage';
 import PricingPage from './pages/PricingPage';
 import ContactPage from './pages/ContactPage';
+import FAQPage from './pages/FAQPage';
 
 export default function App() {
   const [currentRoute, setCurrentRoute] = useState<string>('home');
@@ -30,6 +30,8 @@ export default function App() {
         setCurrentRoute('gallery');
       } else if (path === '#/pricing') {
         setCurrentRoute('pricing');
+      } else if (path === '#/faq') {
+        setCurrentRoute('faq');
       } else if (path === '#/contact') {
         setCurrentRoute('contact');
       } else {
@@ -67,6 +69,8 @@ export default function App() {
         return <GalleryPage />;
       case 'pricing':
         return <PricingPage />;
+      case 'faq':
+        return <FAQPage />;
       case 'contact':
         return <ContactPage />;
       default:
@@ -89,7 +93,6 @@ export default function App() {
 
       {/* Global Interactive Elements */}
       <WhatsAppFloating />
-      <MobileCTABar />
     </div>
   );
 }

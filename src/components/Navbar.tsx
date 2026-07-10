@@ -37,19 +37,7 @@ export default function Navbar({ currentRoute, onChangeRoute }: NavbarProps) {
   const handleNavClick = (route: string) => {
     onChangeRoute(route);
     setMobileMenuOpen(false);
-    
-    // Smooth scroll to section if we are on the home route and it's a sub-section
-    if (route === 'about' || route === 'reviews' || route === 'faq') {
-      onChangeRoute('home');
-      setTimeout(() => {
-        const el = document.getElementById(`${route}-section`);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -73,7 +61,7 @@ export default function Navbar({ currentRoute, onChangeRoute }: NavbarProps) {
         </button>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1 ml-auto mr-8">
           {navItems.map((item) => {
             const isActive = currentRoute === item.route;
             return (

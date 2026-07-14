@@ -7,8 +7,9 @@ export default function AboutPage() {
   return (
     <div id="about-page-container" className="pt-24 bg-white text-neutral-900">
       <SEOHelper
-        title="About AV Dream Creations | Wedding Photography Experts"
-        description="Learn more about our brand vision, storytellers, candid portrait specialists, and cinematic film editors based in Bangalore, Karnataka."
+        title="About Us | AV Dream Creations - Professional Wedding Storytellers"
+        description="Meet the visionaries behind AV Dream Creations. Learn about our candid wedding photographers, traditional ritual directors, and expert film editors serving Bangalore and Karnataka."
+        keywords="about AV Dream Creations, wedding photographers team Bangalore, expert cinematic videographers Karnataka, candid photo studio Bangalore, professional wedding shoot crew, photography artists Karnataka"
       />
 
       {/* Subpage Header Banner */}

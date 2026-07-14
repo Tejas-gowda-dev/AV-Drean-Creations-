@@ -44,8 +44,9 @@ export default function Home({ onNavigate }: HomeProps) {
   return (
     <div id="home-page-container">
       <SEOHelper
-        title="Wedding Photographer in Bangalore | AV Dream Creations"
-        description="AV Dream Creations offers wedding photography, cinematic wedding films, pre-wedding shoots, engagement photography, birthday events, and drone videography across Bangalore and Karnataka. Book your date today."
+        title="AV Dream Creations | Best Wedding Photographer & Films Bangalore"
+        description="AV Dream Creations offers premium wedding photography, high-end cinematic wedding films, pre-wedding shoots, engagement photography, and drone videography across Bangalore and Karnataka. Secure your timeless memories today."
+        keywords="best wedding photographer Bangalore, luxury wedding films Karnataka, professional wedding photography, candid photographer Bangalore, cinematic wedding videographer Karnataka, pre-wedding shoot Bangalore, traditional wedding photography India, AV Dream Creations"
         schema={homeSchema}
       />
 

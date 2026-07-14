@@ -94,8 +94,9 @@ export default function FilmsPage() {
   return (
     <div id="films-page-container" className="pt-24 min-h-screen bg-white text-neutral-900 pb-20">
       <SEOHelper
-        title="Cinematic Wedding Films & Teasers | AV Dream Creations"
-        description="Experience love in motion. Watch premium cinematic wedding films, teasers, and pre-wedding films masterfully color-graded by AV Dream Creations in Bangalore."
+        title="Cinematic Wedding Films & Video Portfolio | AV Dream Creations"
+        description="Experience luxury in motion. Watch real wedding highlights, high-resolution teaser clips, and epic candid love stories filmed by AV Dream Creations across Karnataka."
+        keywords="wedding films Bangalore, cinematic wedding videography Karnataka, professional wedding teasers, high-end wedding videos, drone wedding filming Bangalore, marriage video editing, AV Dream Creations portfolio"
         schema={pageSchema}
       />
 

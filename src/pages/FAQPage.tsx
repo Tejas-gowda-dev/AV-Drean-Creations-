@@ -6,8 +6,9 @@ export default function FAQPage() {
   return (
     <div id="faq-page-container" className="pt-24 bg-white text-neutral-900">
       <SEOHelper
-        title="Frequently Asked Questions | AV Dream Creations"
-        description="Find clear answers to your inquiries about wedding photography packages, delivery timelines, custom coffee table albums, and regional travels in Karnataka."
+        title="Frequently Asked Questions | AV Dream Creations FAQ"
+        description="Find answers to common questions about booking, album layouts, delivery timelines, candid shoot procedures, and travel policies for weddings across Bangalore and Karnataka."
+        keywords="wedding photography FAQs, videography FAQs Bangalore, photo album delivery timeline, hiring wedding photographer questions, candid versus traditional style, photography crew details"
       />
 
       {/* Subpage Header Banner */}

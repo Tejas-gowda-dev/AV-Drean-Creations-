@@ -14,7 +14,8 @@ export default function PricingPage() {
     <div id="pricing-page-container" className="pt-24 bg-white text-neutral-900">
       <SEOHelper
         title="Wedding Photography Cost & Packages Bangalore | AV Dream Creations"
-        description="Explore our transparent pricing collections. Packages start at ₹25,000 for Silver, Gold at ₹45,000, and Platinum premium full coverage at ₹75,000+. No hidden charges."
+        description="Explore our transparent pricing collections. Premium wedding packages start at ₹25,000 for Silver, Gold at ₹45,000, and Platinum full cinema coverage at ₹75,000. Custom plans tailored across Karnataka."
+        keywords="wedding photography packages Bangalore, wedding videography pricing Karnataka, candid photography cost Bangalore, wedding video teaser price, pre-wedding shoot cost, low cost wedding photographer Bangalore, luxury wedding shooting price"
       />
 
       {/* Subpage Header Banner */}

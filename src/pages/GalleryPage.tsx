@@ -75,8 +75,9 @@ export default function GalleryPage() {
   return (
     <div id="gallery-page-container" className="pt-24 bg-white text-neutral-900">
       <SEOHelper
-        title="Full Story Portfolio & Gallery | AV Dream Creations"
-        description="Browse our masterfully compiled, high-resolution photography collections. Fine-art wedding previews, pre-wedding snaps, baby showers, and traditional house warming rituals."
+        title="Fine-Art Wedding Photography Gallery | AV Dream Creations"
+        description="Browse our masterfully compiled, high-resolution photography collections. Discover beautiful candid portraits, pre-wedding couple shoots, traditional bridal albums, and festive event photos."
+        keywords="wedding photography gallery, candid portraits Bangalore, pre-wedding shoot pictures, bridal portrait photography, South Indian wedding photos, professional album design samples, family event photography Karnataka"
       />
 
       {/* Hero Banner */}

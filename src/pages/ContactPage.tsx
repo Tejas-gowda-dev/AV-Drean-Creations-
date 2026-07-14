@@ -6,8 +6,9 @@ export default function ContactPage() {
   return (
     <div id="contact-page-container" className="pt-24 bg-white text-neutral-900">
       <SEOHelper
-        title="Contact AV Dream Creations"
-        description="Book your wedding photographer in Bangalore. Fill out our contact inquiry form to secure your dates and get custom PDF quotes in 30 minutes."
+        title="Contact Us & Book | AV Dream Creations Bangalore"
+        description="Connect with AV Dream Creations to book your wedding photography and cinematic shoot. Get high-end customizable digital quotes and session dates in Bangalore & Karnataka."
+        keywords="contact wedding photographer Bangalore, book wedding videographer Karnataka, hire candid photographer, AV Dream Creations contact, wedding shoot reservation Bangalore"
       />
 
       {/* Subpage Header Banner */}
